@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { LanguageProvider } from '../lib/language-context'
 import './globals.scss'
 
 const libreBaskervilleBold = localFont({
@@ -24,6 +25,14 @@ const merriweatherBold = localFont({
   display: 'swap',
 })
 
+const ptSerifItalic = localFont({
+  src: '../fonts/PTSerif-Italic.ttf',
+  variable: '--font-pt-serif-italic',
+  weight: '400',
+  style: 'italic',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'Kutiev Law Firm',
   description: 'Expert legal advisory focused in the criminal law and litigation',
@@ -37,9 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${libreBaskervilleBold.variable} ${libreBaskervilleItalic.variable} ${merriweatherBold.variable}`}
+        className={`${libreBaskervilleBold.variable} ${libreBaskervilleItalic.variable} ${merriweatherBold.variable} ${ptSerifItalic.variable}`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )

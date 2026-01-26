@@ -1,14 +1,23 @@
+'use client'
+
 import Image from 'next/image'
+import { useLanguage } from '../lib/language-context'
+import { translations } from '../lib/translations'
+import { LanguageSwitcher } from '../components/LanguageSwitcher'
 import styles from './page.module.scss'
 
 export default function Home() {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   return (
     <>
-      <header className={styles.header}>
+      <LanguageSwitcher />
+      <header className={`${styles.header} ${styles.headerFade}`}>
         <div className={styles.logoContainer}>
           <Image
             src="/Logo.svg"
-            alt="Kutiev Law Firm Logo - Lady Justice"
+            alt={t.logoAlt}
             width={100}
             height={100}
             className={styles.logo}
@@ -16,27 +25,34 @@ export default function Home() {
           />
         </div>
         <div className={styles.firmNameContainer}>
-          <h1 className={styles.firmName}>Kutiev</h1>
-          <p className={styles.firmTitle}>Law Firm</p>
+          <h1 className={styles.firmName}>{t.firmName}</h1>
+          <p
+            className={
+              language === 'bg'
+                ? `${styles.firmTitle} ${styles.firmTitleBulgarian}`
+                : styles.firmTitle
+            }
+          >
+            {t.firmTitle}
+          </p>
         </div>
       </header>
 
       <main className={styles.main}>
         <div className={styles.contentGrid}>
           {/* Qualifications Section */}
-          <section className={`${styles.section} ${styles.qualifications}`}>
+          <section className={`${styles.section} ${styles.qualifications} ${styles.qualificationsFade}`}>
             <ul className={styles.list}>
-              <li>10+ Years of Legal practice</li>
-              <li>Master of Laws</li>
-              <li>PhD in Criminal litigation</li>
-              <li>Attorney-at-law</li>
+              {t.qualifications.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
             <div className={styles.separator}></div>
           </section>
 
           {/* Center Image */}
           <div className={styles.centerColumn}>
-            <div className={styles.imageContainer}>
+            <div className={`${styles.imageContainer} ${styles.profileImageFade}`}>
               <Image
                 src="/Profile Picture.png"
                 alt="Professional portrait of lawyer"
@@ -49,37 +65,36 @@ export default function Home() {
           </div>
 
           {/* Description Section */}
-          <section className={`${styles.section} ${styles.descriptionSection}`}>
+          <section className={`${styles.section} ${styles.descriptionSection} ${styles.descriptionFade}`}>
             <p className={styles.description}>
-              Expert legal advisory
+              {t.description.line1}
               <br />
-              focused in the criminal law and litigation.
+              {t.description.line2}
               <br />
-              Delivering practical solutions
+              {t.description.line3}
               <br />
-              for each client&apos;s needs.
+              {t.description.line4}
             </p>
             <div className={styles.separator}></div>
           </section>
 
           {/* Practice Areas Section */}
-          <section className={`${styles.section} ${styles.practiceAreas}`}>
+          <section className={`${styles.section} ${styles.practiceAreas} ${styles.practiceAreasFade}`}>
             <ul className={styles.list}>
-              <li>Criminal law</li>
-              <li>Criminal litigation</li>
-              <li>Administrative penal law</li>
-              <li>Penal enforcement law</li>
+              {t.practiceAreas.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
             <div className={styles.separator}></div>
           </section>
 
           {/* Contact Section */}
-          <section className={`${styles.section} ${styles.contactSection}`}>
+          <section className={`${styles.section} ${styles.contactSection} ${styles.contactFade}`}>
             <address className={styles.contact}>
               <a href="tel:+359883337696">+359883337696</a>
               <a href="mailto:hristo.kutiev@gmail.com">hristo.kutiev@gmail.com</a>
               <a href="mailto:hkutiev@abv.bg">hkutiev@abv.bg</a>
-              <p>137 &quot;Knyaz Boris I&quot; Str., Sofia</p>
+              <p>{t.contact.address}</p>
             </address>
             <div className={styles.separator}></div>
           </section>
