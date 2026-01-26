@@ -38,7 +38,7 @@ export default function Home() {
           <div className={styles.centerColumn}>
             <div className={styles.imageContainer}>
               <Image
-                src="/Profile picture.png"
+                src="/Profile Picture.png"
                 alt="Professional portrait of lawyer"
                 width={600}
                 height={800}

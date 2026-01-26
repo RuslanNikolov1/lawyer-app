@@ -3,14 +3,14 @@ import localFont from 'next/font/local'
 import './globals.scss'
 
 const libreBaskervilleBold = localFont({
-  src: '../public/fonts/LibreBaskerville-Bold.ttf',
+  src: '../fonts/LibreBaskerville-Bold.ttf',
   variable: '--font-libre-baskerville-bold',
   weight: '700',
   display: 'swap',
 })
 
 const libreBaskervilleItalic = localFont({
-  src: '../public/fonts/LibreBaskerville-Italic.ttf',
+  src: '../fonts/LibreBaskerville-Italic.ttf',
   variable: '--font-libre-baskerville-italic',
   weight: '400',
   style: 'italic',
@@ -18,7 +18,7 @@ const libreBaskervilleItalic = localFont({
 })
 
 const merriweatherBold = localFont({
-  src: '../public/fonts/Merriweather_24pt-Bold.ttf',
+  src: '../fonts/Merriweather_24pt-Bold.ttf',
   variable: '--font-merriweather-bold',
   weight: '700',
   display: 'swap',
