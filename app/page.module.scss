@@ -60,7 +60,7 @@
     flex-direction: row;
     align-items: center;
     gap: 2vw;
-    padding: 4vh 3vw 2vh;
+    padding: 2vh 3vw 0 3vw;
     height: auto;
     justify-content: center;
   }
@@ -70,7 +70,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 16vw;
+  margin-left: 17vw;
   margin-top: -5vh;
 
   @media (max-width: $breakpoint-tablet) {
@@ -82,8 +82,7 @@
 .logo {
   width: 26vh;
   height: 26vh;
-  filter: brightness(0) invert(94%);
-  color: $white;
+  color: $beige;
 
   @media (max-width: $breakpoint-tablet) {
     width: 14vw;
@@ -113,9 +112,9 @@
 
 .firmName {
   font-family: var(--font-libre-baskerville-bold);
-  font-size: 56px;
+  font-size: 60px;
   font-weight: 700;
-  color: $white;
+  color: $beige;
   line-height: 1.2;
   margin: 0;
 
@@ -134,10 +133,10 @@
 
 .firmTitle {
   font-family: var(--font-libre-baskerville-italic);
-  font-size: 48px;
+  font-size: 35px;
   font-style: italic;
   font-weight: 400;
-  color: $white;
+  color: $beige;
   line-height: 1.2;
   margin: 0;
   margin-top: 0.5vw;
@@ -389,8 +388,8 @@
     transform: translateY(-3vh);
   }
 
-  @media (max-width: $breakpoint-tablet) {
-    transform: translateY(0);
+  @media (max-width: 768px) {
+    transform: translateY(-4vh);
   }
 }
 
@@ -416,7 +415,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8vw;
+  gap: 0.9vw;
 
   @media (max-width: $breakpoint-desktop) {
     gap: 1vw;
@@ -465,10 +464,10 @@
 
 .description {
   font-family: var(--font-merriweather-bold);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: $beige;
-  line-height: 2.1;
+  line-height: 1.9;
   margin: 0;
   max-width: 100%;
 
@@ -479,7 +478,7 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: 3.6vw;
+    font-size: 3.4vw;
   }
 }
 
@@ -492,7 +491,7 @@
   font-style: normal;
   display: flex;
   flex-direction: column;
-  gap: 0.6vw;
+  gap: 0.5vw;
   margin: 0;
 
   @media (max-width: $breakpoint-desktop) {
@@ -508,7 +507,7 @@
   @media (max-width: $breakpoint-mobile) {
     font-size: 3vw;
     gap: 1.2vh;
-    margin-bottom: 4vh;
+    margin-bottom: 6vh;
   }
 
   a {

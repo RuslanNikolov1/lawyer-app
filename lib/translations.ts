@@ -36,7 +36,7 @@ export const translations = {
   en: {
     logoAlt: 'Kutiev Law Firm Logo - Lady Justice',
     firmName: 'Kutiev',
-    firmTitle: 'Law Firm',
+    firmTitle: 'law firm',
     qualifications: {
       title: 'Qualifications',
       items: [

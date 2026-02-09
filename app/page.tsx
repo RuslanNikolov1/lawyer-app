@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { useLanguage } from '../lib/language-context'
 import { translations } from '../lib/translations'
-import { LanguageSwitcher } from '../components/LanguageSwitcher'
 import styles from './page.module.scss'
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
 
   return (
     <>
-      <LanguageSwitcher />
       <header className={`${styles.header} ${styles.headerFade}`}>
         <div className={styles.logoContainer}>
           <Image
@@ -33,7 +31,7 @@ export default function Home() {
                 : styles.firmTitle
             }
           >
-            {t.firmTitle}
+            - {t.firmTitle} -
           </p>
         </div>
       </header>
