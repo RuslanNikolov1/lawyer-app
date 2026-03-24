@@ -8,10 +8,10 @@ export const translations = {
     qualifications: {
       title: 'Квалификации',
       items: [
+        'Адвокат',
         '10+ години правна практика',
         'Магистър по право',
         'Доктор по наказателно право',
-        'Адвокат',
       ],
     },
     description: {
@@ -40,15 +40,15 @@ export const translations = {
     qualifications: {
       title: 'Qualifications',
       items: [
+        'Attorney-at-law',
         '10+ Years of Legal practice',
         'Master of Laws',
-        'PhD in Criminal Procedures',
-        'Attorney-at-law',
+        'PhD in Criminal Procedure Law',
       ],
     },
     description: {
       line1: 'Expert legal advisory',
-      line2: 'focused in the criminal law and litigation.',
+      line2: 'focused on Criminal law and litigation.',
       line3: 'Delivering practical solutions',
       line4: 'for each client\'s needs.',
     },

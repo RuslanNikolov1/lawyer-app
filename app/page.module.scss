@@ -73,7 +73,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   margin-left: 17vw;
-  margin-top: -7vh;
+  margin-top: -6vh;
 
   @media (max-width: $breakpoint-tablet) {
     margin-left: 0;
@@ -82,8 +82,8 @@
 }
 
 .logo {
-  width: 26vh;
-  height: 26vh;
+  width: 25vh;
+  height: 25vh;
   color: $beige;
 
   @media (max-width: $breakpoint-tablet) {
@@ -101,7 +101,8 @@
   align-items: center;
   text-align: left;
   margin-right: 19.5vw;
-  margin-top: 0.5vh;
+  margin-bottom: 1vh;
+  margin-top: -1.5vh;
   z-index: 1000;
 
   @media (max-width: $breakpoint-tablet) {
