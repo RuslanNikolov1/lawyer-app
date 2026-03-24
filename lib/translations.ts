@@ -42,7 +42,7 @@ export const translations = {
       items: [
         '10+ Years of Legal practice',
         'Master of Laws',
-        'PhD in Criminal litigation',
+        'PhD in Criminal Procedures',
         'Attorney-at-law',
       ],
     },
