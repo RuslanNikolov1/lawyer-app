@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import { LanguageProvider } from '../lib/language-context'
+import { baseUrl } from '../lib/locales'
 import './globals.scss'
+
+export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+}
 
 const libreBaskervilleBold = localFont({
   src: '../fonts/LibreBaskerville-Bold.ttf',
@@ -33,25 +37,12 @@ const ptSerifItalic = localFont({
   display: 'swap',
 })
 
-export const metadata: Metadata = {
-  title: 'Kutiev Law Firm',
-  description: 'Expert legal advisory focused in the criminal law and litigation',
-}
+const fontClassName = `${libreBaskervilleBold.variable} ${libreBaskervilleItalic.variable} ${merriweatherBold.variable} ${ptSerifItalic.variable}`
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body
-        className={`${libreBaskervilleBold.variable} ${libreBaskervilleItalic.variable} ${merriweatherBold.variable} ${ptSerifItalic.variable}`}
-      >
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={fontClassName}>{children}</body>
     </html>
   )
 }

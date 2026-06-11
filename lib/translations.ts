@@ -2,7 +2,13 @@ export type Language = 'bg' | 'en'
 
 export const translations = {
   bg: {
+    seo: {
+      title: 'Кутиев Адвокатска Кантора | Наказателно Право',
+      description:
+        'Правна консултация по наказателно право в София. Христо Кутиев — адвокат, доктор по наказателно процесуално право, 10+ г. опит.',
+    },
     logoAlt: 'Лого на Кутиев Адвокатска Кантора - Лейди Джастис',
+    profileImageAlt: 'Професионален портрет на адвокат Христо Кутиев',
     firmName: 'Кутиев',
     firmTitle: 'Адвокатска Кантора',
     qualifications: {
@@ -34,7 +40,13 @@ export const translations = {
     },
   },
   en: {
+    seo: {
+      title: 'Kutiev Law Firm | Criminal Law & Litigation',
+      description:
+        'Expert criminal law advisory in Sofia. Hristo Kutiev — Attorney-at-law, PhD in Criminal Procedure Law, 10+ years of practice.',
+    },
     logoAlt: 'Kutiev Law Firm Logo - Lady Justice',
+    profileImageAlt: 'Professional portrait of attorney Hristo Kutiev',
     firmName: 'Kutiev',
     firmTitle: 'law firm',
     qualifications: {

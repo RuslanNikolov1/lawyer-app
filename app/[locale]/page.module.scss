@@ -1,50 +1,39 @@
-@import '../styles/variables.scss';
+@use '../../styles/variables' as *;
 
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
-    opacity: 0;
+    transform: translateY(12px);
   }
 
   to {
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.profileImageFade {
-  opacity: 0;
-  animation: fadeIn 1.1s ease-out 0.8s both;
-  will-change: opacity;
-}
-
-.headerFade {
-  opacity: 0;
-  animation: fadeIn 1.1s ease-out 1.6s both;
-  will-change: opacity;
-}
-
 .practiceAreasFade {
-  opacity: 0;
-  animation: fadeIn 1.1s ease-out 2.4s both;
-  will-change: opacity;
+  animation: fadeInUp 0.6s ease-out 0.15s forwards;
 }
 
 .qualificationsFade {
-  opacity: 0;
-  animation: fadeIn 1.1s ease-out 3s both;
-  will-change: opacity;
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
 }
 
 .descriptionFade {
-  opacity: 0;
-  animation: fadeIn 1.1s ease-out 3.6s both;
-  will-change: opacity;
+  animation: fadeInUp 0.6s ease-out 0.25s forwards;
   gap: 0.1vw !important;
 }
 
 .contactFade {
-  opacity: 0;
-  animation: fadeIn 1.1s ease-out 4.2s both;
-  will-change: opacity;
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practiceAreasFade,
+  .qualificationsFade,
+  .descriptionFade,
+  .contactFade {
+    animation: none;
+  }
 }
 
 .header {
@@ -72,7 +61,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 17vw;
+  margin-left: 15vw;
   margin-top: -6vh;
 
   @media (max-width: $breakpoint-tablet) {
@@ -100,7 +89,7 @@
   flex-direction: column;
   align-items: center;
   text-align: left;
-  margin-right: 19.5vw;
+  margin-right: 17vw;
   margin-bottom: 1vh;
   margin-top: -1.5vh;
   z-index: 1000;
@@ -320,6 +309,7 @@
   width: 100%;
   max-width: 28vw;
   aspect-ratio: 3 / 4;
+  contain: layout style;
 
   @media (max-width: $breakpoint-tablet) {
     max-width: 75vw;
