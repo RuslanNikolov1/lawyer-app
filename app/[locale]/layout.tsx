@@ -30,6 +30,12 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
 
   const { seo } = translations[locale]
   const ogLocale = locale === 'bg' ? 'bg_BG' : 'en_US'
+  const ogImage = {
+    url: '/opengraph-image.png',
+    width: 1200,
+    height: 630,
+    alt: 'Kutiev Law Firm — Lady Justice logo',
+  }
 
   return {
     metadataBase: new URL(baseUrl),
@@ -42,11 +48,13 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       siteName: 'Kutiev Law Firm',
       title: seo.title,
       description: seo.description,
+      images: [ogImage],
     },
     twitter: {
       card: 'summary_large_image',
       title: seo.title,
       description: seo.description,
+      images: [ogImage.url],
     },
     alternates: {
       canonical: `/${locale}`,
