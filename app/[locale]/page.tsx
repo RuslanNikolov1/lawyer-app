@@ -1,7 +1,6 @@
 import { cacheLife } from 'next/cache'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { preload } from 'react-dom'
 import { LanguageSwitcher } from '../../components/LanguageSwitcher'
 import { buildPageJsonLd } from '../../lib/json-ld'
 import { isValidLocale } from '../../lib/locales'
@@ -24,13 +23,17 @@ export default async function Home({ params }: PageProps) {
   const t = translations[locale]
   const jsonLd = buildPageJsonLd(locale)
 
-  preload('/profile-picture-640.webp', {
-    as: 'image',
-    fetchPriority: 'high',
-  })
-
   return (
     <>
+      <link
+        rel="preload"
+        as="image"
+        href="/profile-picture-640.webp"
+        imageSrcSet="/profile-picture-640.webp 640w, /profile-picture-960.webp 960w"
+        imageSizes="(max-width: 768px) 75vw, 28vw"
+        fetchPriority="high"
+        type="image/webp"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -63,14 +66,17 @@ export default async function Home({ params }: PageProps) {
         <div className="contentGrid">
           <div className="centerColumn">
             <div className="imageContainer">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/profile-picture-640.webp"
+                srcSet="/profile-picture-640.webp 640w, /profile-picture-960.webp 960w"
+                sizes="(max-width: 768px) 75vw, 28vw"
                 alt={t.profileImageAlt}
                 width={640}
                 height={960}
-                sizes="(max-width: 768px) 75vw, 28vw"
                 className="profileImage"
-                priority
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
           </div>
