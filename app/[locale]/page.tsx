@@ -27,6 +27,9 @@ export default async function Home({ params }: PageProps) {
   preload('/profile-picture-640.webp', {
     as: 'image',
     fetchPriority: 'high',
+    imageSrcSet: '/profile-picture-640.webp 640w, /profile-picture-960.webp 960w',
+    imageSizes: '(max-width: 768px) 75vw, 28vw',
+    type: 'image/webp',
   })
 
   return (
