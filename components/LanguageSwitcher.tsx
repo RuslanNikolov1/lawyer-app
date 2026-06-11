@@ -1,32 +1,31 @@
-'use client'
-
-import { useParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
 import type { Language } from '../lib/translations'
-import styles from './LanguageSwitcher.module.scss'
 
-export function LanguageSwitcher() {
-  const params = useParams()
-  const router = useRouter()
-  const locale = params.locale as Language
+type LanguageSwitcherProps = {
+  locale: Language
+}
 
+export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
   return (
-    <div className={styles.switcher}>
-      <button
-        className={`${styles.button} ${locale === 'en' ? styles.active : ''}`}
-        onClick={() => router.push('/en')}
+    <nav className="langSwitcher" aria-label="Language">
+      <Link
+        href="/en"
+        className={`langButton ${locale === 'en' ? 'langActive' : ''}`}
         aria-label="Switch to English"
-        type="button"
+        aria-current={locale === 'en' ? 'page' : undefined}
+        prefetch
       >
         EN
-      </button>
-      <button
-        className={`${styles.button} ${locale === 'bg' ? styles.active : ''}`}
-        onClick={() => router.push('/bg')}
+      </Link>
+      <Link
+        href="/bg"
+        className={`langButton ${locale === 'bg' ? 'langActive' : ''}`}
         aria-label="Switch to Bulgarian"
-        type="button"
+        aria-current={locale === 'bg' ? 'page' : undefined}
+        prefetch
       >
         БГ
-      </button>
-    </div>
+      </Link>
+    </nav>
   )
 }

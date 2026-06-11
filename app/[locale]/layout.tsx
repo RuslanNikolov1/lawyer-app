@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { notFound } from 'next/navigation'
+import { bgFontVariables } from '../../lib/fonts'
 import { baseUrl, isValidLocale, locales } from '../../lib/locales'
 import { translations } from '../../lib/translations'
 
@@ -70,13 +71,16 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   }
 
   return (
-    <>
+    <div
+      className={locale === 'bg' ? bgFontVariables : undefined}
+      style={{ display: 'contents' }}
+    >
       <script
         dangerouslySetInnerHTML={{
           __html: `document.documentElement.lang='${locale}'`,
         }}
       />
       {children}
-    </>
+    </div>
   )
 }

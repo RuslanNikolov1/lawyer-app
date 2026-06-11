@@ -3,21 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "compile:styles": "node scripts/compile-styles.mjs",
+    "predev": "npm run compile:styles",
+    "prebuild": "npm run compile:styles",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "^16.1.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "^16.1.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.5",
     "@types/react": "^19.0.6",
     "@types/react-dom": "^19.0.2",
-    "typescript": "^5.7.2",
-    "sass": "^1.83.0"
-  }
+    "sass": "^1.83.0",
+    "typescript": "^5.7.2"
+  },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 111",
+    "safari >= 16.4"
+  ]
 }
